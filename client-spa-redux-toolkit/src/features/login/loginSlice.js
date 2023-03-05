@@ -69,4 +69,3 @@ const loginSlice = createSlice({
 });
 
 export default loginSlice.reducer;
-// export const { success, failed } = loginSlice.actions;

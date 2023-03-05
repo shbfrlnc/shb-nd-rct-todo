@@ -54,4 +54,3 @@ const registerSlice = createSlice({
 });
 
 export default registerSlice.reducer;
-// export const { success, failed } = registerSlice.actions;

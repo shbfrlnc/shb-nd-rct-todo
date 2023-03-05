@@ -67,4 +67,3 @@ const headerSlice = createSlice({
 });
 
 export default headerSlice.reducer;
-// export const { success, failed } = headerSlice.actions;
