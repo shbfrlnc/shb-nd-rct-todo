@@ -1,4 +1,4 @@
-# shb-nd-rct-todo-complete - Aplikasi Todo List yang dibuat dengan Node.js, React, Redux, Redux Toolkit, Context, Bootstrap, dan Axios
+# shb-nd-rct-todo - Aplikasi Todo List yang dibuat dengan Node.js, React, Redux, Redux Toolkit, Context, Bootstrap, dan Axios
 
 ## Software Apakah Ini?
 
