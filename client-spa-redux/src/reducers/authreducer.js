@@ -16,29 +16,6 @@ function authReducer(state = initialState, action) {
                 status: initialState.status,
                 message: initialState.message,
             };
-        case "act-renew-token-success":
-            sessionStorage.setItem("accessToken", action.payload.accessToken);
-            sessionStorage.setItem("refreshToken", action.payload.refreshToken);
-            return {
-                ...state,
-                currentAction: action.type,
-                status: action.payload.status,
-                message: action.payload.message,
-                accessToken: action.payload.accessToken,
-                refreshToken: action.payload.refreshToken,
-            };
-        case "act-renew-token-failed":
-            sessionStorage.removeItem("accessToken");
-            sessionStorage.removeItem("refreshToken");
-            return {
-                ...state,
-                currentAction: action.type,
-                status: action.payload.status,
-                message: action.payload.message,
-                accessToken: null,
-                refreshToken: null,
-                user: null,
-            };
         case "act-login-success":
             sessionStorage.setItem("accessToken", action.payload.accessToken);
             sessionStorage.setItem("refreshToken", action.payload.refreshToken);

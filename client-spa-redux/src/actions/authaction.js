@@ -1,47 +1,4 @@
-import {
-    authRenewToken,
-    authLogin,
-    authRegister,
-    authLogout,
-} from "../services/authservice";
-
-export const renewToken = () => {
-    return async (dispatch) => {
-        const { status, message, accessToken, refreshToken } =
-            await authRenewToken();
-
-        if (accessToken && refreshToken) {
-            dispatch({
-                type: "act-renew-token-success",
-                payload: {
-                    status,
-                    message,
-                    accessToken,
-                    refreshToken,
-                },
-            });
-
-            await dispatch({
-                type: "act-auth-reset-status-message",
-            });
-            return;
-        }
-
-        dispatch({
-            type: "act-renew-token-failed",
-            payload: {
-                status,
-                message,
-                accessToken,
-                refreshToken,
-            },
-        });
-
-        await dispatch({
-            type: "act-auth-reset-status-message",
-        });
-    };
-};
+import { authLogin, authRegister, authLogout } from "../services/authservice";
 
 export const register = (email, password, repeatPassword) => {
     return async (dispatch) => {

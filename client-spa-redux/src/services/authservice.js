@@ -7,31 +7,6 @@ const axiosConfig = {
     },
 };
 
-export async function authRenewToken() {
-    const refreshToken = sessionStorage.getItem("refreshToken");
-    if (!refreshToken) {
-        return {
-            status: "error",
-            message: "refresh token invalid",
-            accessToken: null,
-            refreshToken: null,
-        };
-    }
-
-    const ret = await axios.post(
-        "http://localhost:3001/auth/token",
-        { refreshToken: refreshToken.split(" ")[1] },
-        axiosConfig
-    );
-
-    return {
-        status: ret.data.status,
-        message: ret.data.message,
-        accessToken: ret.data.accessToken,
-        refreshToken: ret.data.refreshToken,
-    };
-}
-
 export async function authLogin(data) {
     const ret = await axios.post(
         "http://localhost:3001/auth/login/",
